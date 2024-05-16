@@ -8,13 +8,33 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/Search',
+    name: 'search',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+      return import('../views/SearchView.vue')
+    }
+  },
+  {
+    path: '/futebol',
+    name: 'futebol',
+    component: function () {
+      return import('../views/FutebolView.vue')
+      meta: { requiresAuth: true }
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+
+    component: function () {
+      return import('../views/RegisterView.vue')
+    }
+  },
+  {
+    path: '/Sign-in',
+    name: 'sign-in',
+    component: function () {
+      return import( '../views/SingInView.vue')
     }
   }
 ]
@@ -22,6 +42,19 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
-})
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  if(to.matched.some((record) => record.meta.requiresAuth)){
+    if(genAuth().currentUser){
+      next();
+    }else{
+      alert('You must be logged in to see this page');
+      next("/sign-in")
+    }
+  }else{
+    next();
+  }
+});
+
+export default router;
