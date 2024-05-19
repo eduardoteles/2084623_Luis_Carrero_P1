@@ -1,7 +1,6 @@
 <template>
   <nav class="navbar">
-    
-    <router-link class="nav-link" to="/"><img src="./assets/GLASHS.png" alt="Logo"> </router-link>
+    <router-link class="nav-link" to="/"><img src="./assets/GLASHS2.png" class="imgnav" alt="Logo"> </router-link>
     <router-link v-if="isLoggedIn" class="nav-link" to="/futebol">Tabela Classificação </router-link>
     <router-link v-if="isLoggedIn"  class="nav-link" to="/Search">Pesquisa Equipa</router-link>
     <router-link v-if="!isLoggedIn" class="nav-link" to="/Sign-in">Login </router-link>
@@ -21,6 +20,28 @@
     <DarkMode />
   </nav>
   <router-view />
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://www.facebook.com/seuusername" class="icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/seuusername" class="icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/seuusername" class="icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/seuusername/" class="icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </p>
+    </div>
+    <div>
+      <p>&copy; 2024 - Todos os direitos reservados</p>
+    </div>
+  </footer>
 </template>
 <script setup>
 import { onMounted, ref } from 'vue';
@@ -53,6 +74,61 @@ const handleSignOut = () => {
 </script>
 
 <style>
+
+html.dark {
+  color-scheme: dark;
+
+  .nav-link {
+    color: #fff;
+  }
+
+  .Btn {
+    --black: #ffffff;
+    --ch-black: #e1e1e1;
+    --eer-black: #f3f3f3;
+    --night-rider: #ffffff;
+    --white: #ffffff;
+    --af-white: #000000;
+    --ch-white: #ffffff;
+  }
+
+  body {
+    background-color: #333;
+  }
+
+  .navbar {
+    background-color: #121212
+  }
+  .footer {
+    background-color: #121212;
+    color: #fff
+  }
+  .icon {
+    color: #fff;
+  }
+  .icon:hover {
+  color: #04be9c;
+}
+
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.icon {
+  margin: 0 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+
+.icon:hover {
+  color: #04be9c;
+}
 /* botão de logout */
 .Btn {
   --black: #000000;
@@ -128,32 +204,6 @@ const handleSignOut = () => {
   transform: translate(2px, 2px);
 }
 
-html.dark {
-  color-scheme: dark;
-
-  .nav-link {
-    color: #fff;
-  }
-
-  .Btn {
-    --black: #ffffff;
-    --ch-black: #e1e1e1;
-    --eer-black: #f3f3f3;
-    --night-rider: #ffffff;
-    --white: #ffffff;
-    --af-white: #000000;
-    --ch-white: #ffffff;
-  }
-
-  body {
-    background-color: #333;
-  }
-
-  .navbar {
-    background-color: #121212
-  }
-}
-
 body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -166,7 +216,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .nav-link {
@@ -190,9 +239,8 @@ body {
 }
 
 img {
-  width: 150px;
-  height: 30px;
-  background-color: #ffffff;
+  width: 100px;
+  height: 20px;
 }
 
 </style>

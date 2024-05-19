@@ -115,6 +115,9 @@ export default {
 </script>
 
 <style>
+body{
+  margin-bottom: 5%;
+}
 html.dark{
   color-scheme: dark;
   .about{
