@@ -21,7 +21,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.activeImage = (this.activeImage + 1) % this.images.length
-    }, 2000) // Muda a imagem a cada 2 segundos
+    }, 2000) 
   }
 }
 </script>
@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .carousel {
   position: relative;
-  width: 100vw; /* Faz o carrossel ocupar toda a largura da janela de visualização */
+  width: 100vw;
   height: 300px;
   overflow: hidden;
 }
