@@ -1,19 +1,16 @@
-# project
+  ⚽️ 𝔾𝕝𝕒𝕤𝕙𝕊𝕔𝕠𝕣𝕖 ⚽️
 
-## Project setup
-```
-npm install
-```
+🔧 Funcionalidades
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+🔒 Autenticação com Firebase
+  Login e registro de utilizadores usando Firebase Authentication.
+  Suporte para autenticação por e-mail e senha.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+🌙 Modo Escuro
+  Alternância entre modos claro e escuro para uma melhor experiência do utilizador.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+🏆 Tabela de Classificação
+  Exibição da tabela de classificação de uma liga específica obtida através da API.
+
+🔍 Barra de Pesquisa
+  Pesquisa de equipes com dados obtidos da API.
